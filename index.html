@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Testing Password Strength</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        Pass Power Index
+      </header>
+      <form action="#">
+        <div class="field">
+          <input onkeyup="trigger()" type="text" placeholder="type your password">
+          <span class="showBtn">show</span>
+        </div>
+        <div class="indicator">
+          <span class="weak"></span>
+          <span class="medium"></span>
+          <span class="strong"></span>
+        </div>
+        <div class="text">
+          pass is weak
+        </div>
+      </form>
+    </div>
+    <script>
+      const indicator = document.querySelector(".indicator");
+      const input = document.querySelector("input");
+      const weak = document.querySelector(".weak");
+      const medium = document.querySelector(".medium");
+      const strong = document.querySelector(".strong");
+      const text = document.querySelector(".text");
+      let regExpWeak = /[a-z]/;
+      let regExpMedium = /\d+/;
+      let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+      function trigger(){
+        if(input.value != "") {
+          indicator.style.display = "block";
+          indicator.style.display = "flex";
+
+        } else {
+          indicator.style.display = "none";
+        }
+      }
+    </script>
+  <app-root></app-root>
+</body>
+</html>
